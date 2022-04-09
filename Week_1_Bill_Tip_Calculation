@@ -1,0 +1,17 @@
+//P1 Write a program that reads the restaurant bill’s total 
+//amount and the percentage you want to tip and then 
+//calculates and displays the total amount you need to pay (bill+tip).
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double bill,tip_percentage,tip;
+    cout << "Please enter the bill amount (in dollars): ";
+    cin >> bill;
+    cout << "Please enter the tip percentage: %";
+    cin >> tip_percentage;
+    tip = bill * (tip_percentage/100);
+    cout << "You need to pay $" << bill+tip << " that is $" << bill << " for the food + $" 
+    << tip << " as tip" << endl;
+    return 0; }
