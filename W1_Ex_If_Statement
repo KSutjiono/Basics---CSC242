@@ -1,0 +1,34 @@
+//Simple Program to show if the integer "5" or "2" is entered,
+//the prompt will shww HiFive or HiEven, respectively.
+//
+//#include <iostream>
+//using namespace std;
+//
+//int main(){
+//  // Prompt the user to enter an integer
+//  int number;
+//  cout << "Enter an integer: ";
+//  cin >> number;
+//  if (number % 5 == 0)
+//    cout << "HiFive" << endl;
+//  if (FILL_CODE_OR_CLICK_ANSWER)
+//    cout << "HiEven" << endl;
+//  return 0;}
+
+
+//****Answer Below
+#include <iostream>
+using namespace std;
+
+int main(){
+  // Prompt the user to enter an integer
+  int number;
+  cout << "Enter an integer: ";
+  cin >> number;
+
+  if (number % 5 == 0)
+    cout << "HiFive" << endl;
+
+  if (number % 2 == 0)
+    cout << "HiEven" << endl;
+  return 0;}
