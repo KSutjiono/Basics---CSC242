@@ -1,0 +1,19 @@
+//e^x can be approximately be computed using the following formula: 
+//e^x=1+x^1/1+x^2/2+x^3/6+x^4/24+x^5/120 Write a program that gets x and 
+//calculate the approximate value e^x. 
+//Test your program for x = 1 and x = 2
+
+#include <iostream>
+using namespace std;
+int main() {
+//Inputting values
+    double answer;
+    double x;
+//Calculations
+    x = 1;
+    answer = 1+(x/1)+(x*x/2)+(x*x*x/6)+(x*x*x*x/24)+(x*x*x*x*x/120);
+    cout<<"When x = 1: "<<answer<<endl;
+    x = 2;
+    answer = 1+(x/1)+(x*x/2)+(x*x*x/6)+(x*x*x*x/24)+(x*x*x*x*x/120);
+    cout<<"When x = 2: "<<answer<<endl;
+    return 0;}
