@@ -1,0 +1,37 @@
+//Write a program that prompts the user to enter four double numbers and finds their sum and average. The program should then find the number of the entered numbers that are above the calculated average. Here is a sample run. Enter Num 1: 1
+
+//Enter Num 2: 10
+//Enter Num 3: 12
+//Enter Num 4: 7
+//The sum is: 30
+//The Average is: 7.5
+//2 numbers are above average.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    //Defining terms
+    double n1, n2, n3, n4, sum, average;
+    int count = 0;
+    //Entering four values for sum and average
+    cout << "Enter Num 1: ";
+    cin >> n1;
+    cout << "Enter Num 2: ";
+    cin >> n2;
+    cout << "Enter Num 3: ";
+    cin >> n3;
+    cout << "Enter Num 4: ";
+    cin >> n4;
+    //Calculating sum value and average
+    sum = n1 + n2 + n3 + n4;
+    average = sum / 4;
+    cout << "The sum is: " << sum << endl;
+    cout << "The Average is: " << average << endl;
+    //Calculating how many numbers are above the average
+    if (n1 > average) ++count;
+    if (n2 > average) ++count;
+    if (n3 > average) ++count;
+    if (n4 > average) ++count;
+    cout << count << " numbers are above average." << endl;
+    return 0;}
