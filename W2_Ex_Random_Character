@@ -23,10 +23,9 @@
 
 //****ANSWER BELOW
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> //FOR RAND AND SRAND FUNCTIONS
+#include <ctime> //FOR TIME FUNCTION
 using namespace std;
-
 int main(){
 //Initial input of 2 chosen letter characters
   cout << "Enter a starting character: ";
@@ -35,10 +34,12 @@ int main(){
   cout << "Enter an ending character: ";
   char endChar;
   cin >> endChar;
+  
 //Get a random character
   srand(time(0));
   char randomChar = static_cast<char>(startChar + rand() % 
     (endChar - startChar + 1));
+    
 //Output
   cout << "The random character between " << startChar << " and " 
        << endChar << " is " << randomChar << endl;
