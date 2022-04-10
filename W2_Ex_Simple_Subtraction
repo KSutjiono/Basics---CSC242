@@ -1,0 +1,62 @@
+#include <iostream>
+#include FILL_CODE_OR_CLICK_ANSWER //FOR TIME FUNCTION
+#include FILL_CODE_OR_CLICK_ANSWER //FOR RAND AND SRAND FUNCTION
+using namespace std;
+
+int main(){
+  // 1. Generate two random single-digit integers
+  srand(FILL_CODE_OR_CLICK_ANSWER);
+  int number1 = FILL_CODE_OR_CLICK_ANSWER;
+  int number2 = rand() % 10;
+  // 2. If FILL_CODE_OR_CLICK_ANSWER, swap number1 with number2
+  if (number1 < number2)
+  {
+    int temp = number1;
+    number1 = number2;
+    number2 = temp;
+  }
+  // 3. Prompt the student to answer “what is number1 – number2?”
+  cout << "What is " << number1 << " - " << number2 << "? ";
+  int answer;
+  cin >> answer;
+  // 4. Grade the answer and display the result
+  if (number1 - number2 == answer)
+    cout << "You are correct!";
+  else
+    cout << "Your answer is wrong." << endl << number1 << " - " 
+         << number2 << " should be " << (number1 - number2) << endl;
+
+  return 0;}
+
+
+
+//****ANSWER BELOW
+#include <iostream>
+#include <ctime> //FOR TIME FUNCTION
+#include <cstdlib> //FOR RAND AND SRAND FUNCTION
+using namespace std;
+
+int main(){
+  // 1. Generate two random single-digit integers
+  srand(time(0));
+  int number1 = rand() % 10;
+  int number2 = rand() % 10;
+  // 2. If number1 < number2, swap number1 with number2
+  if (number1 < number2) //ENSURES VALUES ARE ALWAYS POSITIVE
+  {
+    int temp = number1;
+    number1 = number2;
+    number2 = temp;
+  }
+  // 3. Prompt the student to answer “what is number1 – number2?”
+  cout << "What is " << number1 << " - " << number2 << "? ";
+  int answer;
+  cin >> answer;
+  // 4. Grade the answer and display the result
+  if (number1 - number2 == answer)
+    cout << "You are correct!";
+  else
+    cout << "Your answer is wrong." << endl << number1 << " - " 
+         << number2 << " should be " << (number1 - number2) << endl;
+
+  return 0;}
