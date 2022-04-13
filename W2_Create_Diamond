@@ -1,0 +1,42 @@
+//Use the loops to write an application that 
+//prints the following diamond shape.
+//    *
+//   ***
+//  *****
+// *******
+//*********
+// *******
+//  *****
+//   ***
+//    *
+
+
+//***ANSWER BELOW
+#include <iostream>
+using namespace std;
+
+int main() 
+{ 
+//Top half of diamond + mid (rows 1 to 5)
+for (int i=0;i<5;i++)
+{ 
+//Total of 9 stars in mid
+//Sets perameters of stars and spaces
+    for (int h=0;h<4-i;h++)
+        cout << " ";
+    for (int h=0;h<2*i+1;h++)
+        cout <<"*";
+    cout << "\n";
+}
+//Bottom half of diamond (rows 6 to 9)
+for (int i=0;i<4;i++)
+{
+//Sets parameters of inverted pyramid
+    for (int h=0;h<i+1;h++)
+        cout << " ";
+    for (int h=0;h<7-2*i;h++)
+        cout << "*";
+    cout << "\n";
+}
+return 0; 
+}
