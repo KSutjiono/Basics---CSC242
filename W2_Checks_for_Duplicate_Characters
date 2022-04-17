@@ -1,0 +1,49 @@
+//Write a program that prompts the user to enter two strings and 
+//then find the common characters of the two strings and displays them.
+//Example:
+  //string1 = “Hello”
+  //string1 = “pilot”
+	//Common Characters = lo
+
+
+//***ANSWER BELOW
+#include <iostream>
+using namespace std;
+//Boolean expression (notContain) and defining terms temp and ch
+bool notContain(char printedChars[], int temp, char ch) 
+    {
+    int i;
+    for (i = 0; i < temp; i++) 
+        {
+        if (printedChars[i] == ch)
+            return true;
+        }
+    return false;
+    }
+int main()
+{
+//Enters initial values of i and j
+    string s1, s2;
+    char printedChars[100];
+    int i, j, index = 0;
+    cout << "Enter string1: ";
+    cin >> s1;
+    cout << "Enter string2: ";
+    cin >> s2;
+    cout << "Common Characters = ";
+//Displays the values that are matching
+    for (i = 0; i < s1.size(); i++)
+    {
+        for (j = 0; j < s2.size(); j++)
+        {
+            if (s1.at(i) == s2.at(j) && !notContain(printedChars, index, s1.at(i)))
+            {
+                cout << s1.at(i);
+                printedChars[index++] = s1.at(i);
+                break;
+            }
+        }
+    }
+    return 0;
+}
+
