@@ -1,0 +1,38 @@
+//Implement the following integer functions:
+//a) Function celsius returns the Celsius equivalent of a 
+//Fahrenheit temperature, using the calculation
+//celsius = 5.0 / 9.0 * (fahrenheit - 32);
+//b) Function fahrenheit returns the Fahrenheit equivalent of a 
+//Celsius temperature, using the calculation
+//fahrenheit = 9.0 / 5.0 * celsius + 32;
+
+
+
+//***ANSWER BELOW
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number, celsius, fahrenheit;
+    cout << "Enter 1 for Fahrenheit to Celsius conversion\n";
+    cout << "Enter 2 for Celsius to Fahrenheit conversion: ";
+    cin >> number;
+    if (number == 1)
+        { 
+        cout << "Please enter Fahrenheit value: ";
+        cin >> fahrenheit;   
+        celsius = 5.0 / 9.0 * (fahrenheit - 32);   
+        cout << "Celsius: " << celsius << endl;   
+        }
+    if (number == 2)
+        { 
+        cout << "Please enter Celsius value: ";
+        cin >> celsius;
+        fahrenheit = 9.0 / 5.0 * celsius + 32;
+        cout << "Fahrenheit: " << fahrenheit << endl;
+        }
+    if (number < 0 || number > 2)
+        { cout << "Please input 1 or 2";}
+   return 0; 
+}
