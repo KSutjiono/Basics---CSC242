@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+int main() {
+    //Homework 4 question 1
+    //reading all the coordinates of the cities
+      double cities[20][2];
+      int numberOfCities;
+      cout << "Please enter the number of cities: ";
+        cin >> numberOfCities;
+      cout << "Enter the coordinates of the cities separated by space: " << endl;
+        for (int cityIndex = 0; cityIndex < numberOfCities; cityIndex++) {
+          cin >> cities[cityIndex][0] >> cities[cityIndex][1];
+      }
+      cout << endl;
+      }
+    //Homework 4 question 3
+      const int SIZE = 3;
+      int main() {
+        int a[SIZE][SIZE];
+    //use randomly generated number to fill the matrix.
+      for (int rowIndex = 0; rowIndex < SIZE; rowIndex++) {
+        for (int columnIndex = 0; columnIndex < SIZE; columnIndex++) {
+        // rand() % 2 gives two possible values of 0 and 1
+        // since I need the values to be 3 and 4.
+          a[rowIndex][columnIndex] = rand() % 2 + 3;
+          }
+        }
+        // print the matrix
+          for (int rowIndex = 0; rowIndex < SIZE; rowIndex++) {
+          for (int columnIndex = 0; columnIndex < SIZE; columnIndex++) {
+        // rand() % 2 gives two possible values of 0 and 1
+        // since I need the values to be 3 and 4.
+          cout << a[rowIndex][columnIndex] << "\t";
+        }
+          cout << endl;
+        }
+          for (int columnIndex = 0; columnIndex < SIZE; columnIndex++) {
+        // check to see if I have all 3 columns
+          if (a[0][columnIndex] == 3 && a[1][columnIndex] == 3 && a[2][columnIndex] == 3) {
+          cout << "Column " << columnIndex << " has all 3s." << endl;
+        }
+        }
+        }
+    // homework 4 question 2 help.
+      const int COLUMN_SIZE = 4;
+      //we are familiar with --> int sum(const int a[], int size);
+        double sumRow(const double a[][COLUMN_SIZE], int rowIndex) // a[][COLUMN_SIZE], int rowSize
+        // double sumRow(const double a[][], int rowIndex) -- illegal.
+        {
+          double total = 0;
+          for (int column = 0; column < COLUMN_SIZE; column++)
+          {
+            total += a[rowIndex][column];
+           }
+           return total;
+         }
+    int main()
+    {
+    // get the input for the matrix
+    const int ROW_SIZE = 3;
+    double m[ROW_SIZE][COLUMN_SIZE]; // change matrix to double
+    cout << "Enter " << ROW_SIZE << " rows and "
+         << COLUMN_SIZE << " columns: " << endl;
+    for (int i = 0; i < ROW_SIZE; i++)
+      for (int j = 0; j < COLUMN_SIZE; j++)
+        cin >> m[i][j];
+    //display the matrix
+      cout << endl << "The matrix entered is: " << endl;
+      for (int row = 0; row < ROW_SIZE; row++)
+      {
+        for (int column = 0; column < COLUMN_SIZE; column++)
+      {
+        cout << m[row][column] << "\t";
+      }
+        cout << endl;
+      }
+        for (int rowIndex = 0; rowIndex < ROW_SIZE; rowIndex++) {
+        cout << "The sum of all elements on row " << rowIndex << " is: " << sumRow(m, rowIndex) <<
+        endl;
+      }
+      //cout << "\nSum of all elements is " << sum(m, ROW_SIZE) << endl;
+   return 0;
+   }
+   
+   
