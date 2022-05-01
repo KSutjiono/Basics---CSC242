@@ -82,4 +82,93 @@ int main() {
    return 0;
    }
    
-   
+
+
+
+
+
+#include <iostream>
+using namespace std;
+//Project work together.
+void balance() { cout << "balance function called.\n"; }
+void deposit() { cout << "deposit function called.\n"; }
+void withdraw() { cout << "withdraw function called.\n"; }
+void goodbye() { cout << "goodbye function called.\n"; }
+void display() {
+cout << "1. Sign in\n";
+cout << "2. Balance\n";
+cout << "3. Deposit\n";
+cout << "4. Withdraw\n";
+cout << "5. Exit\n";
+cout << "Please enter your selection: ";
+}
+int main() {
+int selection = 0;
+bool loggedIn = false;
+double accounts[2] = { 1000.0, 1000.0 };
+int accountNumber;
+display();
+cin >> selection;
+while (true) {
+if (selection < 1 || selection > 5) {
+display();
+cin >> selection;
+}
+else {
+if (selection == 1) {
+cout << "Please enter an account number: ";
+cin >> accountNumber;
+loggedIn = true;
+}
+else {
+if (loggedIn) {
+if (selection == 2) {
+balance(); }
+else if (selection == 3) {
+deposit(); }
+else if (selection == 4) {
+withdraw();
+}
+else {
+loggedIn = false;
+goodbye();
+}
+}
+else {
+selection = 0;
+cout << "Not logged in.\n";
+}
+}
+selection = 0;
+}
+}
+}
+/*
+// Homework 4 question 1
+double distance(double x1, double y1, double x2, double y2) {
+double d = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+return d;
+}
+int main() {
+// reading all the coordinates of the cities
+double cities[20][2];
+int numberOfCities;
+cout << "Please enter the number of cities: ";
+cin >> numberOfCities;
+cout << "Enter the coordinates of the cities separated by space: " << endl;
+for (int cityIndex = 0; cityIndex < numberOfCities; cityIndex++) {
+cin >> cities[cityIndex][0] >> cities[cityIndex][1];
+}
+cout << endl;
+int cityIndex = 4;
+cout << "As an example, let us calculate the total distance from city " << cityIndex << " to all
+other cities" << endl;
+double totalDistance = 0;
+for (int theOtherCityIndex = 0; theOtherCityIndex < numberOfCities; theOtherCityIndex++) {
+double d0 = distance(cities[cityIndex][0], cities[cityIndex][1],
+cities[theOtherCityIndex][0], cities[theOtherCityIndex][1]);
+totalDistance += d0;
+}
+cout << "Total distance to city " << cityIndex << " is " << totalDistance << endl;
+}
+*/
