@@ -1,0 +1,127 @@
+//Faye’s made-up problem
+//Write a program that reads the length and the width of a rectangle
+//and then calculates and displays the area of the rectangle. Here is a sample run:
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+// explore integer division
+  int a = 99;
+  int b = 10;
+  cout << a<< " / " << b <<" = " << a / b << endl;
+// How to extract one's digit
+  int a = 123459;
+  cout << "The one's digit is " << a % 10 << endl;
+//examples on cins and couts.
+  //cout << "Hello to CSC242!"<<endl;
+    double length;
+    double width;
+    //prompt the user to enter the length of the rectangle
+      cout << "Please enter the length of your rectangle: ";
+      cin >> length;
+    //prompt the user to enter the width of the rectangle
+      cout << "Please enter the width of your rectangle: ";
+      cin >> width;
+//cout << "The length is " << length << " and the width is " << width << endl;
+double area;
+area = length * width;
+cout << "The area of the rectangle is " << area << endl;
+cout << "Programming is fun!" << endl << endl << endl;
+}
+
+//***PART TWO
+//***BELOW
+//***SECTION BREAK
+
+#include <iostream>
+using namespace std;
+int main()
+{
+//how to use switch
+  //demo 4: ask the user to enter a birthday in three digits
+  //month, day, and year, and display it in the format of
+  //January 8, 2022
+  //part I -- prompts user for input and the extra the three digits
+    //part II -- translate the month to the word for the month
+      //part III -- display in the new format
+  int month, day, year;
+  //part I
+    cout << "Please enter a birthday in three integers: month day year (separated by a spacce): ";
+    cin >> month >> day >> year;
+    cout << "The birthday is ";
+    switch (month) {
+    case 1: cout << "January"; break;
+    case 2: cout << "February"; break;
+    case 3: cout << "March"; break;
+    case 4: cout << "April"; break;
+    case 5: cout << "May"; break;
+    case 6: cout << "June"; break;
+    case 7: cout << "July"; break;
+    case 8: cout << "August"; break;
+    case 9: cout << "September"; break;
+    case 10: cout << "October"; break;
+    case 11: cout << "November"; break;
+    case 12: cout << "December"; break;
+    default:
+    cout << "Wrong month entry!!!";
+    }
+    cout << " " << day << ", " << year << endl;
+      //leap years
+      //A year may be a leap year if it is evenly divisible by 4.
+      //Years that are divisible by 100 (century years such as 1900 or 2000)
+      //cannot be leap years unless they are also divisible by 400.
+      //(For this reason, the years 1700, 1800, and 1900 were not leap
+      //years, but the years 1600 and 2000 were.)
+        if (year % 4 == 0) {
+        if (year % 100 == 0 && year % 400 != 0) {
+        cout << "It is not a leap year!" << endl;
+        }
+          else  {
+          cout << "It is a leap year!" << endl;
+                }
+        }
+          else  {
+          cout << "It is not a leap year!" << endl;
+                }
+            return 0;
+        // demo 1: extract the one's digit from any given number
+          int number, onesdigit, tensdigit;
+          cout << "Please enter a number: ";
+          cin >> number;
+            onesdigit = number % 10;
+            tensdigit = (number / 10) % 10;
+              cout << "The one's digit is " << onesdigit << endl;
+        // demo 2: extra the 10's digit from any given number.
+          cout << "The ten's digit is " << tensdigit << endl;
+        // demo 3: to find out if a 2-digit number is a palindrome
+          if (onesdigit == tensdigit) {
+          cout << "You have a palindrome!" << endl;
+              }
+          else {
+            cout << "You do not have a palindrome!" << endl;
+              }
+          double score = 84;
+            if (score >= 90) 
+              {cout << "Grade is A ";}
+            else if (score >= 80) 
+              {cout << "Grade is B";}
+            else if (score >= 70) 
+              {cout << "Graded is C";}
+            else if (score >= 60) 
+               {cout << "Grade is D";}
+            else 
+               {cout << "Grade is F";}
+        // Prompt the user to enter an integer
+          int number;
+          cout << "Enter an integer: ";
+          cin >> number;
+        //nested if/else statements
+          if (number % 5 == 0)
+          cout << "HiFive" << endl;
+          else {
+            if (number % 2 == 0)
+            cout << "HiEven" << endl;
+                }
+            return 0;
+            }
