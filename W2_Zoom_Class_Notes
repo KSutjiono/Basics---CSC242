@@ -2,71 +2,62 @@
 #include <string>
 using namespace std;
 int main() {
-bool a = false;
-if (a)
-cout << "a is true!" << endl;
-else
-cout << "a is false!" << endl;
-cout << (!(1 + 2 == 3)) << endl;
-int number = 0;
-int sum = 0;
-while (number != -99)
-{
-sum += number;
-// Prompt the user for confirmation
-cout << "Enter the next score to be added, enter -99 to quit: ";
-cin >> number;
-}
-cout << "The sum of scores is: " << sum << endl;
-// demonstration of swapping number
-/*
-int i = 10;
-int j = 12;
-int temp;
-printf("Before swapping, i is %d and j is %d\n", i, j);
-temp = i;
-i = j;
-j = temp;
-printf("After swapping, i is %d and j is %d\n", i, j);
-*/
-// demonstration for string
-/*
-string s1;
-char ch;
-cout << "Please enter a sentence for string s1: " << endl;
-getline(cin, s1);
-cout << "The string is " << s1.length() << " characters!\n";
-cout << "What is the 10th character in your string? ";
-cin >> ch;
-if (ch == s1[9]) {
-cout << "Bingo!" << endl;
-}
-else {
-cout << "You missed! Try next time!" << endl;
-}
-*/
-// demonstration for printf()
-// www.cplusplus.com
-/*
-double d1, d2;
-d1 = 35.375;
-d2 = 5.375;
-cout << "The tip is $" << d2 << ", and the total bill is $" << d1 << endl;
-printf("The tip is $%.2f and the total bill is $%.2f\n\n", d2, d1);
-*/
-/* cin vs getline for string
-string city;
-cout << "Enter a city: ";
-//cin >> city; // Read to string city
-getline(cin, city, '\n'); // Same as getline(cin, city)
-cout << "You entered " << city << endl;
-*/
-// character with ASCII example.
-// char ch = 'a';
-// cout << static_cast<char>(ch + 6) << endl;
-// one way
-//char ch1 = ch + 6;
-//cout << ch1;
+  bool a = false;
+  if (a)
+    cout << "a is true!" << endl;
+  else
+    cout << "a is false!" << endl;
+    cout << (!(1 + 2 == 3)) << endl;
+      int number = 0;
+      int sum = 0;
+    while (number != -99)
+      {
+      sum += number;
+      //Prompt the user for confirmation
+        cout << "Enter the next score to be added, enter -99 to quit: ";
+        cin >> number;
+        }
+          cout << "The sum of scores is: " << sum << endl;
+          // demonstration of swapping number
+            int i = 10;
+            int j = 12;
+            int temp;
+              printf("Before swapping, i is %d and j is %d\n", i, j);
+              temp = i;
+              i = j;
+              j = temp;
+              printf("After swapping, i is %d and j is %d\n", i, j);
+         //demonstration for string
+           string s1;
+           char ch;
+             cout << "Please enter a sentence for string s1: " << endl;
+             getline(cin, s1);
+               cout << "The string is " << s1.length() << " characters!\n";
+               cout << "What is the 10th character in your string? ";
+                 cin >> ch;
+                  if (ch == s1[9]) 
+                    {cout << "Bingo!" << endl;}
+                  else 
+                    {cout << "You missed! Try next time!" << endl;}
+      //demonstration for printf()
+      //www.cplusplus.com
+        double d1, d2;
+        d1 = 35.375;
+        d2 = 5.375;
+          cout << "The tip is $" << d2 << ", and the total bill is $" << d1 << endl;
+          printf("The tip is $%.2f and the total bill is $%.2f\n\n", d2, d1);
+      //cin vs getline for string
+        string city;
+        cout << "Enter a city: ";
+          cin >> city; // Read to string city
+          getline(cin, city, '\n'); // Same as getline(cin, city)
+            cout << "You entered " << city << endl;
+      //character with ASCII example.
+        char ch = 'a';
+        cout << static_cast<char>(ch + 6) << endl;
+      //one way
+        char ch1 = ch + 6;
+        cout << ch1;
 }
 
 //***PART TWO**************************************************************************************************************
@@ -77,82 +68,74 @@ cout << "You entered " << city << endl;
 #include <string>
 using namespace std;
 int main() {
-// example for homework 2 question 4
-int number, factorial;
-cout << "Pelase enter a number to calculate factorial for: ";
-cin >> number;
-factorial = 1;
-int i = 1;
-while (i <= number) {
-factorial *= i++; }
-cout << "The factorial for " << number << " is " << factorial << endl;
-/*
-for (int i = 1; i <= number; i++) {
-factorial *= i;
-}
-*/
-// example for homework 2 question 3
-/*
-bool hasCommonCharacter = false;
-string string1, string2;
-cout << "Please enter the first string: ";
-getline(cin, string1);
-cout << "Please enter the second string: ";
-getline(cin, string2);
-cout << "The first string is " << string1 << ", and the second string is " << string2 << endl;
-for (int index1 = 0; index1 < string1.length(); index1++) {
-if(!((string1[index1]>='A' && string1[index1] <= 'Z') ||
-(string1[index1] >= 'a' && string1[index1] <= 'z')) )
-continue;
-for (int index2 = 0; index2 < string2.length(); index2++) {
-if (!((string2[index2] >= 'A' && string2[index2] <= 'Z') ||
-(string2[index2] >= 'a' && string2[index2] <= 'z')))
-continue;
-if (string1[index1] == string2[index2]) {
-hasCommonCharacter = true;
-break;
-}
-}
-if (hasCommonCharacter) break;
-}
-if (hasCommonCharacter) {
-cout << "The two strings have common characters!\n";
-}
-else {
-cout << "The two strings do not have common characters!\n";
-}
-*/
-/*
-// example for homework 2 question 2
-// 1. nxn
-int n;
-cout << "Please enter the size of the star pattern: ";
-cin >> n;
-for (int row = 1; row <= n; row++) {
-for (int col = 1; col <= n; col++) {
-cout << "* ";
-}
-cout << endl;
-}
-cout << endl;
-// 2. display a left right triangle
-for (int row = 1; row <= n; row++) {
-for (int col = 1; col <= row; col++) {
-cout << "* ";
-}
-cout << endl;
-}
-cout << endl;
-// 3. display a right right triangle
-for (int row = 1; row <= n; row++) {
-for (int col = 1; col <= n - row; col++) {
-cout << " ";
-}
-for (int col = 1; col <= row; col++) {
-cout << "* ";
-}
-cout << endl;
-}
-cout << endl;
-*/
+    // example for homework 2 question 4
+      int number, factorial;
+      cout << "Pelase enter a number to calculate factorial for: ";
+      cin >> number;
+        factorial = 1;
+        int i = 1;
+        while (i <= number) 
+          {factorial *= i++; }
+          cout << "The factorial for " << number << " is " << factorial << endl;
+          for (int i = 1; i <= number; i++) 
+            {factorial *= i;}
+    //example for homework 2 question 3
+      bool hasCommonCharacter = false;
+      string string1, string2;
+        cout << "Please enter the first string: ";
+          getline(cin, string1);
+        cout << "Please enter the second string: ";
+          getline(cin, string2);
+        cout << "The first string is " << string1 << ", and the second string is " << string2 << endl;
+          for (int index1 = 0; index1 < string1.length(); index1++) 
+          {
+            if(!((string1[index1]>='A' && string1[index1] <= 'Z') ||
+            (string1[index1] >= 'a' && string1[index1] <= 'z')) )
+            continue;
+              for (int index2 = 0; index2 < string2.length(); index2++) {
+              if (!((string2[index2] >= 'A' && string2[index2] <= 'Z') ||
+              (string2[index2] >= 'a' && string2[index2] <= 'z')))
+              continue;
+                if (string1[index1] == string2[index2]) {
+                hasCommonCharacter = true;
+                break;
+                }
+                }
+                if (hasCommonCharacter) break;
+                }
+                if (hasCommonCharacter) 
+                  {cout << "The two strings have common characters!\n";}
+                else 
+                {cout << "The two strings do not have common characters!\n";}
+   //example for homework 2 question 2
+   //1. nxn
+    int n;
+    cout << "Please enter the size of the star pattern: ";
+      cin >> n;
+      for (int row = 1; row <= n; row++) {
+      for (int col = 1; col <= n; col++) {
+        cout << "* ";
+        }
+        cout << endl;
+        }
+        cout << endl;
+    // 2. display a left right triangle
+      for (int row = 1; row <= n; row++) {
+      for (int col = 1; col <= row; col++) {
+        cout << "* ";
+        }
+        cout << endl;
+        }
+        cout << endl;
+   // 3. display a right right triangle
+     for (int row = 1; row <= n; row++) {
+     for (int col = 1; col <= n - row; col++) {
+        cout << " ";
+        }
+        for (int col = 1; col <= row; col++) {
+        cout << "* ";
+        }
+        cout << endl;
+        }
+        cout << endl;
 }
