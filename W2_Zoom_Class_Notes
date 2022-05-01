@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+bool a = false;
+if (a)
+cout << "a is true!" << endl;
+else
+cout << "a is false!" << endl;
+cout << (!(1 + 2 == 3)) << endl;
+int number = 0;
+int sum = 0;
+while (number != -99)
+{
+sum += number;
+// Prompt the user for confirmation
+cout << "Enter the next score to be added, enter -99 to quit: ";
+cin >> number;
+}
+cout << "The sum of scores is: " << sum << endl;
+// demonstration of swapping number
+/*
+int i = 10;
+int j = 12;
+int temp;
+printf("Before swapping, i is %d and j is %d\n", i, j);
+temp = i;
+i = j;
+j = temp;
+printf("After swapping, i is %d and j is %d\n", i, j);
+*/
+// demonstration for string
+/*
+string s1;
+char ch;
+cout << "Please enter a sentence for string s1: " << endl;
+getline(cin, s1);
+cout << "The string is " << s1.length() << " characters!\n";
+cout << "What is the 10th character in your string? ";
+cin >> ch;
+if (ch == s1[9]) {
+cout << "Bingo!" << endl;
+}
+else {
+cout << "You missed! Try next time!" << endl;
+}
+*/
+// demonstration for printf()
+// www.cplusplus.com
+/*
+double d1, d2;
+d1 = 35.375;
+d2 = 5.375;
+cout << "The tip is $" << d2 << ", and the total bill is $" << d1 << endl;
+printf("The tip is $%.2f and the total bill is $%.2f\n\n", d2, d1);
+*/
+/* cin vs getline for string
+string city;
+cout << "Enter a city: ";
+//cin >> city; // Read to string city
+getline(cin, city, '\n'); // Same as getline(cin, city)
+cout << "You entered " << city << endl;
+*/
+// character with ASCII example.
+// char ch = 'a';
+// cout << static_cast<char>(ch + 6) << endl;
+// one way
+//char ch1 = ch + 6;
+//cout << ch1;
+}
+//***
