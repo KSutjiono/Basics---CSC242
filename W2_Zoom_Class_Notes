@@ -68,4 +68,91 @@ cout << "You entered " << city << endl;
 //char ch1 = ch + 6;
 //cout << ch1;
 }
-//***
+
+//***PART TWO**************************************************************************************************************
+//***BELOW*****************************************************************************************************************
+//***SECTION BREAK*********************************************************************************************************
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+// example for homework 2 question 4
+int number, factorial;
+cout << "Pelase enter a number to calculate factorial for: ";
+cin >> number;
+factorial = 1;
+int i = 1;
+while (i <= number) {
+factorial *= i++; }
+cout << "The factorial for " << number << " is " << factorial << endl;
+/*
+for (int i = 1; i <= number; i++) {
+factorial *= i;
+}
+*/
+// example for homework 2 question 3
+/*
+bool hasCommonCharacter = false;
+string string1, string2;
+cout << "Please enter the first string: ";
+getline(cin, string1);
+cout << "Please enter the second string: ";
+getline(cin, string2);
+cout << "The first string is " << string1 << ", and the second string is " << string2 << endl;
+for (int index1 = 0; index1 < string1.length(); index1++) {
+if(!((string1[index1]>='A' && string1[index1] <= 'Z') ||
+(string1[index1] >= 'a' && string1[index1] <= 'z')) )
+continue;
+for (int index2 = 0; index2 < string2.length(); index2++) {
+if (!((string2[index2] >= 'A' && string2[index2] <= 'Z') ||
+(string2[index2] >= 'a' && string2[index2] <= 'z')))
+continue;
+if (string1[index1] == string2[index2]) {
+hasCommonCharacter = true;
+break;
+}
+}
+if (hasCommonCharacter) break;
+}
+if (hasCommonCharacter) {
+cout << "The two strings have common characters!\n";
+}
+else {
+cout << "The two strings do not have common characters!\n";
+}
+*/
+/*
+// example for homework 2 question 2
+// 1. nxn
+int n;
+cout << "Please enter the size of the star pattern: ";
+cin >> n;
+for (int row = 1; row <= n; row++) {
+for (int col = 1; col <= n; col++) {
+cout << "* ";
+}
+cout << endl;
+}
+cout << endl;
+// 2. display a left right triangle
+for (int row = 1; row <= n; row++) {
+for (int col = 1; col <= row; col++) {
+cout << "* ";
+}
+cout << endl;
+}
+cout << endl;
+// 3. display a right right triangle
+for (int row = 1; row <= n; row++) {
+for (int col = 1; col <= n - row; col++) {
+cout << " ";
+}
+for (int col = 1; col <= row; col++) {
+cout << "* ";
+}
+cout << endl;
+}
+cout << endl;
+*/
+}
