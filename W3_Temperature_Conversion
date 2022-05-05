@@ -36,3 +36,7 @@ int main()
         { cout << "Please input 1 or 2";}
    return 0; 
 }
+
+
+//FIX: "THE TEMPERATURE CONVERSION SHOULD BE IMPLEMENTED
+//FIX: AS FUNCTIONS, NOT IN THE MAIN FUNCTION"
