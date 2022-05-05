@@ -52,3 +52,5 @@ int main()
 //FIX: "The main function should invoke the perfect function for all numbers
 //FIX: from 2 to 1000. also isPerfect should return true if the perameter is a
 //FIX: perfect number and false otherwise"
+//FIX: "The program should display all the perfect numbers between 1 and 1000, 
+//FIX: along with their factors"
