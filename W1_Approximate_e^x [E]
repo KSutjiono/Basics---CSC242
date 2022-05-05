@@ -17,3 +17,6 @@ int main() {
     answer = 1+(x/1)+(x*x/2)+(x*x*x/6)+(x*x*x*x/24)+(x*x*x*x*x/120);
     cout<<"When x = 2: "<<answer<<endl;
     return 0;}
+
+
+//FIX: "X SHOULD BE RETRIEVED FROM USER INPUT, NOT HARD CODED IN PROGRAM"
