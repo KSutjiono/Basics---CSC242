@@ -1,0 +1,43 @@
+//Given a set of cities, the central point is the city that has the shortest 
+//total distance to all other cities. Write a program that prompts the user 
+//to enter the number of cities and the locations of the cities (coordinates), 
+//and finds the central city and its total distance to all other cities. Assume 
+//that the maximum number of cities is 20.
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double distance(double cities[][2], int length, int cityIndex) {
+    double total = 0;
+    for (int j = 0; j < length; j++) {
+        total += sqrt(pow(cities[cityIndex][0] - cities[j][0], 2) 
+            + pow(cities[cityIndex][1] - cities[j][1], 2));
+    }
+    return total;
+}
+
+int main() {
+    int number_of_cities;
+    cout << "Please enter the number of cities: ";
+    cin >> number_of_cities;
+    double cities[20][2];
+    cout << "Enter the coordinates of the cities seperated by space: " << endl;
+    for (int cityIndex = 0; cityIndex < number_of_cities; cityIndex++) {
+        cin >> cities[cityIndex][0] >> cities[cityIndex][1];
+    }
+    int central = 0;
+    for (int cityIndex = 0; cityIndex < number_of_cities; cityIndex++) {
+        if (distance(cities, number_of_cities, cityIndex) 
+            < distance(cities, number_of_cities, central)) {
+            central = cityIndex;
+        }
+    }
+    cout << "The central city is at (" << cities[central][0] << ", " 
+        << cities[central][1] << ")" << endl;
+    cout << "The total distance to all other cities is " 
+        << distance(cities, number_of_cities, central) << endl;
+    return 0;
+}
