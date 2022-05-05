@@ -1,0 +1,36 @@
+//Write a function that returns the sum of all the elements 
+//in a specified column in a matrix using the following header:
+//const int SIZE = 4;
+//double sumColumn(const double m[][SIZE], int rowSize, int columnIndex);
+//Write a test program that reads a 3-by-4 matrix and displays the sum of each column.
+
+
+#include<iostream>
+using namespace std;
+const int colSize = 4;
+double total(const double m[][colSize],int rowSize, int columnIndex);
+int main()
+{
+   const int rowSize=3;
+   double matrix[rowSize][colSize];
+   cout << "Enter a 3-by-4 matrix row by row:" << endl;
+   for(int row = 0; row < rowSize; row++)
+   {
+       for(int col=0; col < colSize; col++)
+           cin >> matrix[row][col];
+   }
+   for(int columnIndex = 0; columnIndex < colSize; columnIndex++)
+       cout<<"Sum of the elements at column " << columnIndex << " is "
+        << total(matrix,rowSize,columnIndex) << endl;
+   return 0;
+}
+double total(const double m[][colSize],int rowSize,int columnIndex)
+{
+   
+   double total = 0;
+   //sum the values at columnIndex to columnSum
+   for(int row=0; row < rowSize; row++)
+       total+=m[row][columnIndex];
+   //return columnSum value
+   return total;
+}
