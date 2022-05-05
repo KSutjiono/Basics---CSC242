@@ -1,0 +1,59 @@
+//Write a program that randomly fills in 0s and 1s into a 
+//4-by-4 square matrix, prints the matrix, and finds the 
+//rows, columns, and diagonals with all 0s or 1s. 
+//Here is a sample run of the program:
+//0111
+//0000
+//0100
+//1111
+//All 0's on row 1
+//All 1's on row 3
+//No same numbers on a column
+//No same numbers on the major diagonal
+//No same numbers on the sub-diagonal
+
+
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{   //Inputs variables (4x4 matrix)
+srand(time(NULL));
+int rand_matrix[4][4]; int row_total[4] = {0}; int col_total[4] = {0};
+int m_diag = 0; int s_diag = 0;
+for(int i = 0; i < 4; i++)
+{   //Randomizes matrix
+for(int j = 0; j < 4; j++)
+    {rand_matrix[i][j] = rand()% 2;}
+}
+for(int i = 0; i < 4; i++)
+{
+for(int j = 0; j < 4; j++)
+{   
+cout << rand_matrix[i][j];
+if(i == j) m_diag += rand_matrix[i][j];
+if(i+j==3) s_diag += rand_matrix[i][j];
+row_total[i] += rand_matrix[i][j]; col_total[i] += rand_matrix[j][i];
+}
+cout << endl;       
+}
+bool match_row = false; bool match_col = false;
+for(int k = 0; k < 4; k++)
+{   //Checks row and columns for 0 or 4 which indicates a match
+if(row_total[k] == 0) {match_row = true; cout << "All 0's on row " << (k) << endl; }
+else if(row_total[k] == 4){match_row = true; cout << "All 1's on row " << (k) << endl;}
+if(col_total[k] == 0) {match_col = true;cout << "All 0's on column " << (k) << endl; }
+else if(col_total[k] == 4) {match_col = true;cout << "All 1's on column " << (k) << endl; }
+}   //Section to indicate no matches for columns/rows and major diagnols
+if(!match_row) cout << "No same numbers on a row " << endl;
+if(!match_col) cout << "No same numbers on a column " << endl;
+if(m_diag == 0) cout << "All 0's on major diagonal " << endl;
+else if(m_diag == 4) cout << "All 1's on major diagonal " << endl;
+else cout << "No same numbers on a major diagonal" << endl;
+    //Section to check for sub-diagonal matching or non matching
+if(s_diag == 0) cout << "All 0's on sub-diagonal " << endl;
+else if(s_diag == 4) cout << "All 1's on sub-diagonal " << endl;
+else cout << "No same numbers on a major sub-diagonal" << endl;
+return 0;
+}
