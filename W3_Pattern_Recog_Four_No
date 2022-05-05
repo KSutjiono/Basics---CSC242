@@ -1,0 +1,56 @@
+//Write the following function that tests whether the array has 
+//four consecutive numbers with the same value.
+//bool isConsecutiveFour(const int values[], int size)
+//Write a test program that prompts the user to enter a series of 
+//integers and displays if the series contains four consecutive 
+//numbers with the same value. Your program should first prompt 
+//the user to enter the input size—i.e., the number of values in 
+//the series. Assume the maximum number of values is 80.
+
+
+
+#include <iostream>
+using namespace std;
+
+//Initial bool function
+//Tests whether there is a 0 size
+//Takes the values through loop to check for consecutive numbers
+//If the count returns 4 matching, then true
+bool isConsecutiveFour(const int values[], int size)
+{
+   if(size==0)
+        {return false;}
+   int prev = values[0],count = 1;
+   for(int i=1;i<size;i++)
+   {
+       if(values[i]==prev)
+            {count++;}
+       else
+            {
+            prev = values[i];
+            count = 1;
+            }
+       if(count == 4)
+            {return true;}
+   }
+   return false;
+}
+bool isConsecutiveFour(const int values[], int size);
+int main()
+    {
+//Inputs quantity of values and the values
+//Stores the values in an array then reads the values
+   int n;
+   cout << "Enter the number of values: ";
+   cin >> n;
+   int val[n];
+   cout << "Enter the values: ";
+   for(int i=0;i<n;i++)
+        {cin >> val[i];}
+   bool result = isConsecutiveFour(val,n);
+   if(result==1)
+        {cout << "The list has consecutive fours";}
+   else
+        {cout << "The list has no consecutive fours";}
+   return 0;
+    }
